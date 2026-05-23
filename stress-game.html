@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>들어가기 싫은 날 — 스트레스 해소</title>
+    <link rel="stylesheet" href="./stress-game.css?v=3" />
+  </head>
+  <body>
+    <div class="game-app">
+      <header class="game-header">
+        <h1>들어가기 싫은 날</h1>
+        <p>마음이 풀릴 때까지 버튼을 눌러 보세요. 준비되면 들어가세요.</p>
+      </header>
+
+      <!-- 1) 장소 선택 -->
+      <section id="screen-select" class="screen active" aria-label="장소 선택">
+        <div class="choice-grid">
+          <button type="button" class="choice-card" data-location="room401">
+            <img src="./images/room-401.png" alt="10-1동 401호 건물" width="480" height="360" />
+            <div class="choice-label">
+              10-1동 401호
+              <span>사범대학 교육정보관</span>
+            </div>
+          </button>
+          <button type="button" class="choice-card" data-location="zoom">
+            <img src="./images/zoom-room.png" alt="ZOOM 회의실 화면" width="480" height="360" />
+            <div class="choice-label">
+              ZOOM 회의실
+              <span>온라인 회의 참가</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- 2) 분노 카운트 & 버튼 -->
+      <section id="screen-interact" class="screen" aria-label="마음 풀기">
+        <span id="location-badge" class="location-badge"></span>
+        <div class="scene-image-wrap">
+          <img id="scene-image" src="" alt="" />
+        </div>
+
+        <div class="anger-panel">
+          <p class="label">분노 카운트</p>
+          <p id="anger-count" class="anger-count" aria-live="polite">0</p>
+        </div>
+
+        <div class="action-buttons">
+          <button type="button" id="btn-anger" class="btn btn-anger">
+            들어가고 싶지 않아!!!
+          </button>
+          <button type="button" id="btn-proceed" class="btn btn-proceed">
+            그래도 해야지...
+          </button>
+        </div>
+        <p class="hint">마음이 풀릴 때까지 위 버튼을 눌러 보세요.</p>
+        <button type="button" id="btn-back-select" class="btn btn-ghost">
+          ← 장소 다시 고르기
+        </button>
+      </section>
+
+      <!-- 3) 응원 메시지 -->
+      <section id="screen-result" class="screen" aria-label="응원 메시지">
+        <div class="result-card">
+          <p id="result-tier" class="result-tier"></p>
+          <p id="result-count" class="result-count"></p>
+          <p id="result-message" class="result-message"></p>
+          <div class="result-actions">
+            <button type="button" id="btn-restart" class="btn btn-proceed">
+              처음부터 다시 하기
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="./stress-game.js?v=3"></script>
+  </body>
+</html>
